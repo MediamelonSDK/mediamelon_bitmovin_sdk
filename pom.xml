@@ -1,0 +1,166 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>QubitSDK</groupId>
+    <artifactId>QubitSDK</artifactId>
+    <version>1.0.0</version>
+    <name>QubitSDK Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+    <dependencies>
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>android</artifactId>
+            <version>4.1.1.4</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <properties>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
+    <build>
+        <finalName>libmmsmartstreaming</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.github.wvengen</groupId>
+                <artifactId>proguard-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals><goal>proguard</goal></goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <options>
+                        <option>-keepattributes *Annotation* </option>
+                        <option>-keepattributes Signature </option>
+                        <option>-keepattributes InnerClasses </option>
+                        <option>-repackageclasses</option>
+                        <option>-overloadaggressively</option>
+                        <option>-dontwarn</option>
+                        <option>-allowaccessmodification</option>
+                        <option>-keep public interface com.mediamelon.qubit.MMQFQubitPresentationInfoRetriever$OnQubitPresentationInfoRetrievedListener {*;}</option>
+                        <option>-keep abstract interface com.mediamelon.qubit.TemplatizedURLGeneratorInterface {*;}</option>
+                        <option>-keep public interface com.mediamelon.qubit.ep.EPAttributes {*;}</option>
+                        <option>-keep public interface com.mediamelon.qubit.MMQFQubitConfigurationInterface {*;}</option>
+                        <option>-keep public interface com.mediamelon.qubit.MMQFQubitEngineInterface$OnQubitEngineErrorEventListener {*;}</option>
+                        <option>-keep public interface com.mediamelon.qubit.MMQFQubitModel$OnQubitModelCreatedListener {*;}</option>
+                        <option>-keep public interface com.mediamelon.qubit.MMQFQubitResourceDownloader_HTTP$OnQubitResourceDownloadedListener {*;}</option>
+                        <option>-keep public interface com.mediamelon.qubit.MMQFQubitEngineInterface$OnInitializationCompleteListener {*;}</option>
+                        <option>-keep public interface com.mediamelon.qubit.MMQFQubitEngineInterface$OnQubitEngineInfoEventListener {*;}</option>
+                        <option>-keep public interface com.mediamelon.qubit.MMQFQubitStatisticsInterface {*;}</option>
+                        <option>-keep public interface com.mediamelon.smartstreaming.MMSmartStreamingObserver {*;}</option>
+                        <option>-keep public interface com.mediamelon.qubit.MMQFQubitMetadataFileParser$OnQubitMetadataFileParsedListener</option>
+                        <option>-keep public interface com.mediamelon.qubit.MMQFQubitEngineInterface {*;}</option>
+                        <option>-keep public interface com.mediamelon.qubit.MMQFABRManifestParser {*;}</option>
+
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitizer {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitizer$QubitizationMode {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitizer$onInitializationCompleteListener {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitizer$onSDKRegisterationCompleteObserver {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQBRSwitchInfo {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitRangedResouce {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.QubitSessionStats$QubitABRSwitchInfo {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFStreamingPresentationStats$QubitABRSwitchInfo {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MSSManifestParser </option>
+                        <option>-keep public class com.mediamelon.qubit.DashMPDParser </option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFPresentationInfo {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitResourceDownloader_HTTP {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MSSManifestParser$StreamFragment {*;}</option>
+                        
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitEngineInterface$MMQFQubitResource {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitPresentationInfoRetriever$SegmentInfoForURL {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitModel$CQMetadata$BoundedCBCEntry</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitModel$QubitRunningStatistics {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFPresentationVideoTrackInfo {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitErrorEvent$MMQFQubitErrorEventCode {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitErrorEvent {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitModel</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitModel$CQMetadata$acpEntry</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFABRManifestParserFactory {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFABRManifestParser$AuxResRange {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.ep.PlaybackInfo {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.ep.StatsSender {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.ep.StatsSenderThread {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.ep.RecordStructure {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.ep.StreamInfo {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.ep.QBRMetric {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.ep.StreamID {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.ep.SDKInfo {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.ep.Diagnostics {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.ep.CustomTag {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.ep.EPDataFormat {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.ep.PBEventInfo {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.ep.ClientInfo {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.ep.SegmentInfo {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.ep.AdInfo {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.ep.SDKExperienceProbe {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.ep.SDKEPInterface {*;} </option>
+			            <option>-keep public class com.mediamelon.qubit.ep.HintfileMapping {*;}</option>
+			            <option>-keep public class com.mediamelon.qubit.ep.RegisterAPI {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.ep.RegisterResponse {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitStatisticsInterface$MMQFSegmentQualityInfo {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFPresentationVideoTrackSegmentInfo {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MSSManifestParser$VideoStreamInformation {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitModel$QubitStatistics {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitEngineFactory {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitMetadataFileParser$SparseEntry</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFABRManifestParser$AuxResourceInformation {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitLogger {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitMetadataFileParser$CommonMetadata</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitStatisticsInterface$MMQFSegmentSizeInfo {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitEngine$InitializationSubState {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitModel$iMOSImprovementPoint {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MSSManifestParser$StreamingMediaInformation {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitStatisticsInterface$ResolutionObject</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitEngine {public static com.mediamelon.qubit.MMQFQubitEngine getInstance();}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitEngineInterface$MMQFQubitFailureStatusReasonCode {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitModel$CQMetadata</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitMetadataFileParser$ContentType</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitStatusCode {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFResourceInfo {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.QubitSessionStats {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.QubitSessionStats$QubitStats {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitModel$CQMetadata$BoundedACPEntry</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitPresentationInfoRetriever {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitInfoEvent {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.HLSPlaylistParser {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitModel$CBRMetadata</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitModel$iMOSDifferenceElem {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitInfoEvent$MMQFQubitInfoEventCode {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitModel$iMOSComparator {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitModel$MMQFQubitVideoTrack {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitEngine$VERSION {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitMetadataFileParser$VideoTrackMediaAttributes</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitStatisticsInterface$MMQFABRSwitchInfo {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MSSManifestParser$VideoTrackInfo {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFResourceInfo$MMQFResourceRange {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFQubitMetadataFileParser</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFStreamingPresentationStats {*;}</option>
+                        <option>-keep public class com.mediamelon.qubit.MMQFStreamingPresentationInfoRetriever {*;}</option>
+                        <option>-keep public class com.mediamelon.smartstreaming.MMAdState {*;}</option>
+                        <option>-keep public class com.mediamelon.smartstreaming.MMChunkInformation {*;}</option>
+                        <option>-keep public class com.mediamelon.smartstreaming.MMConnectionInfo {*;}</option>
+                        <option>-keep public class com.mediamelon.smartstreaming.MMOverridableMetric {*;}</option>
+                        <option>-keep public class com.mediamelon.smartstreaming.MMPlayerState {*;}</option>
+                        <option>-keep public class com.mediamelon.smartstreaming.MMPresentationInfo {*;}</option>
+                        <option>-keep public class com.mediamelon.smartstreaming.MMQBRMode {*;}</option>
+                        <option>-keep public class com.mediamelon.smartstreaming.MMSmartStreaming {*;}</option>
+                        <option>-keep public class com.mediamelon.smartstreaming.MMAdType {*;}</option>
+                        <option>-keep public class com.mediamelon.smartstreaming.MMCellInfo {*;}</option>                       
+                        <option>-keep public class com.mediamelon.smartstreaming.MMSmartStreamingInitializationStatus {*;}</option>
+                        <option>-keep public class com.mediamelon.smartstreaming.MMRepresentation {*;}</option>
+                        <option>-keep class  com.mediamelon.qubit.MMQFABRManifestParser$ParserSegmentInfoForURL {*;}</option>
+                    </options>
+                    <libs>
+                        <lib>${java.home}/lib/rt.jar</lib>
+                    </libs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
