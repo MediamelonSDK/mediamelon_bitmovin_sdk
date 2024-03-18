@@ -3,8 +3,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.MediamelonSDK</groupId>
-    <artifactId>castlab-player-lib</artifactId>
+    <artifactId>bitmovin-player-lib</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
-    <description>Android castlab library publishing</description>
+    <description>Android bitmovin library publishing</description>
 </project>
