@@ -4,5 +4,5 @@ jdk:
 before_install:
   - ./scripts/prepareJitpackEnvironment.sh
 install:
-  - FILE="-Dfile=com-atifqamar-customtoast.aar"
-  - mvn install:install-file $FILE -DgroupId=com.github.geek-atif -DartifactId=com-atifqamar-customtoast -Dversion=1.0 -Dpackaging=aar -DgeneratePom=true
+  - FILE="-Dfile=castlabLib-release.aar"
+  - mvn install:install-file $FILE -DgroupId=com.github.MediamelonSDK -DartifactId=castlab-player-lib -Dversion=1.0 -Dpackaging=aar -DgeneratePom=true
